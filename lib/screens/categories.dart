@@ -25,6 +25,37 @@ class Categories extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Category"),
       ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(color: Colors.amber),
+              child: Text(
+                "Meals App",
+                style: TextStyle(color: Colors.black),
+              ),
+            ),
+            ListTile(
+              title: const Text(
+                "Item 1",
+                style: TextStyle(color: Colors.amber),
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text(
+                "Item 2",
+                style: TextStyle(color: Colors.amber),
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            )
+          ],
+        ),
+      ),
       body: GridView(
         padding: const EdgeInsets.all(8),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
