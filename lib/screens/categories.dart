@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meals_app/data/datas.dart';
 import 'package:meals_app/models/category.dart';
+import 'package:meals_app/screens/favorites.dart';
 import 'package:meals_app/screens/meal_list.dart';
 import 'package:meals_app/widgets/category_card.dart';
 
@@ -24,6 +25,17 @@ class Categories extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Category"),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => Favorites(),
+                  ),
+                );
+              },
+              icon: const Icon(Icons.favorite))
+        ],
       ),
       drawer: Drawer(
         child: ListView(
