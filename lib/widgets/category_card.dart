@@ -18,12 +18,15 @@ class CategoryCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
           gradient: LinearGradient(
-              colors: [category.color.withOpacity(0.5), category.color],
+              colors: [Colors.amber.withOpacity(0.5), Colors.amber],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight),
         ),
-        child: Text(category.name),
+        child: Text(
+          category.strCategory,
+        ),
       ),
     );
   }
