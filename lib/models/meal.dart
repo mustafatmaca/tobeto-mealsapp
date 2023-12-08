@@ -1,14 +1,33 @@
-class Meal {
-  final String id;
-  final String categoryId;
-  final String name;
-  final String imageUrl;
-  final List<String> ingredients;
+// To parse this JSON data, do
+//
+//     final meal = mealFromJson(jsonString);
 
-  const Meal(
-      {required this.id,
-      required this.categoryId,
-      required this.name,
-      required this.imageUrl,
-      required this.ingredients});
+import 'dart:convert';
+
+Meal mealFromJson(String str) => Meal.fromJson(json.decode(str));
+
+String mealToJson(Meal data) => json.encode(data.toJson());
+
+class Meal {
+  String strMeal;
+  String strMealThumb;
+  String idMeal;
+
+  Meal({
+    required this.strMeal,
+    required this.strMealThumb,
+    required this.idMeal,
+  });
+
+  factory Meal.fromJson(Map<String, dynamic> json) => Meal(
+        strMeal: json["strMeal"],
+        strMealThumb: json["strMealThumb"],
+        idMeal: json["idMeal"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "strMeal": strMeal,
+        "strMealThumb": strMealThumb,
+        "idMeal": idMeal,
+      };
 }

@@ -18,7 +18,7 @@ class _MealsDetailsState extends ConsumerState<MealsDetails> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.meal.name),
+        title: Text(widget.meal.strMeal),
         actions: [
           IconButton(
             onPressed: () {
@@ -33,7 +33,7 @@ class _MealsDetailsState extends ConsumerState<MealsDetails> {
         ],
       ),
       body: Center(
-        child: Text(widget.meal.name),
+        child: Text(widget.meal.strMeal),
       ),
     );
   }

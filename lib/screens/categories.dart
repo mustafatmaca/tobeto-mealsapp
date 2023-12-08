@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:meals_app/data/datas.dart';
 import 'package:meals_app/models/category.dart';
 import 'package:meals_app/providers/categories_provider.dart';
 import 'package:meals_app/screens/favorites.dart';
@@ -19,9 +18,7 @@ class _CategoriesState extends ConsumerState<Categories> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (ctx) => MealList(
-          meals: meals
-              .where((element) => element.categoryId == category.idCategory)
-              .toList(),
+          category: category,
         ),
       ),
     );
@@ -38,7 +35,7 @@ class _CategoriesState extends ConsumerState<Categories> {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => Favorites(),
+                    builder: (context) => const Favorites(),
                   ),
                 );
               },

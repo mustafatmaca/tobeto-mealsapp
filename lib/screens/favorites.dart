@@ -16,11 +16,11 @@ class _FavoritesState extends ConsumerState<Favorites> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Favorite"),
+        title: const Text("Favorite"),
       ),
       body: ListView.builder(
         itemCount: favoriteMeals.length,
-        itemBuilder: (context, index) => Text(favoriteMeals[index].name),
+        itemBuilder: (context, index) => Text(favoriteMeals[index].strMeal),
       ),
     );
   }
