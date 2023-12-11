@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:meals_app/models/category.dart';
 import 'package:meals_app/models/meal.dart';
+import 'package:meals_app/models/meal_details.dart';
 
 class RequestHelper {
   Future<List<Category>> fetchCategories() async {
@@ -37,6 +38,20 @@ class RequestHelper {
       return listOfMap
           .map((e) => Meal.fromJson(e))
           .toList(); // This alter the Map<String, dynamic> datas to Category and add to list.
+    } else {
+      throw Exception('Failed to load Categories.');
+    }
+  }
+
+  Future<MealDetails> fetchMealDetailById(String id) async {
+    final response = await http.get(
+        // URL is not hidden because API is free and don't need register or API Key. Thanks to TheMealDB.
+        Uri.parse('https://www.themealdb.com/api/json/v1/1/lookup.php?i=$id'));
+
+    if (response.statusCode == 200) {
+      final jsonResponse = json.decode(response.body);
+      List listOfMap = jsonResponse["meals"];
+      return MealDetails.fromJson(listOfMap.first);
     } else {
       throw Exception('Failed to load Categories.');
     }

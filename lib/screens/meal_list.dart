@@ -22,8 +22,8 @@ class MealList extends ConsumerWidget {
                 MealCard(meal: snapshot.data![index]),
           );
         } else if (snapshot.hasError) {
-          return Center(
-            child: Text("${snapshot.error}"),
+          return const Center(
+            child: Text("Oops! Somethings goes wrong."),
           );
         } else {
           return const Center(
@@ -35,7 +35,7 @@ class MealList extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Meals"),
+        title: Text(category.strCategory),
       ),
       body: widget,
     );

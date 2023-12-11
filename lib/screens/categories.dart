@@ -95,8 +95,8 @@ class _CategoriesState extends ConsumerState<Categories> {
                   ),
                 );
               } else if (snapshot.hasError) {
-                return Center(
-                  child: Text("${snapshot.error}"),
+                return const Center(
+                  child: Text("Oops! Somethings goes wrong."),
                 );
               } else {
                 return const Center(child: CircularProgressIndicator());
