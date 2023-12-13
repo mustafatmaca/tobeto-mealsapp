@@ -6,6 +6,8 @@ import 'package:meals_app/screens/favorites.dart';
 import 'package:meals_app/screens/meal_list.dart';
 import 'package:meals_app/widgets/category_card.dart';
 
+enum Pages { categories }
+
 class Categories extends ConsumerStatefulWidget {
   const Categories({Key? key}) : super(key: key);
 
@@ -14,6 +16,8 @@ class Categories extends ConsumerStatefulWidget {
 }
 
 class _CategoriesState extends ConsumerState<Categories> {
+  var currentPage = Pages.categories;
+
   void _selectCategory(BuildContext context, Category category) {
     Navigator.of(context).push(
       MaterialPageRoute(
@@ -54,20 +58,21 @@ class _CategoriesState extends ConsumerState<Categories> {
             ),
             ListTile(
               title: const Text(
-                "Item 1",
+                "Category",
                 style: TextStyle(color: Colors.amber),
               ),
               onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text(
-                "Item 2",
-                style: TextStyle(color: Colors.amber),
-              ),
-              onTap: () {
-                Navigator.pop(context);
+                if (currentPage == Pages.categories) {
+                  Navigator.pop(context);
+                } else {
+                  currentPage = Pages.categories;
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) => const Categories(),
+                    ),
+                  );
+                }
               },
             )
           ],
