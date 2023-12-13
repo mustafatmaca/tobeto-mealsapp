@@ -1,16 +1,18 @@
-# meals_app
+# Meals App
+This app shows meals and meals recipes. Meals can be add favorites.
 
-A new Flutter project.
+## What have been used at this project?
+- Flutter
+- TheMealsDB API
 
-## Getting Started
+### Categories Screen
+![Categories Screen](https://github.com/mustafatmaca/tobeto-mealsapp/assets/58891564/2b2872c0-3dc1-4ecf-8162-1053f83f858f)
 
-This project is a starting point for a Flutter application.
+### MealList Screen
+![MealList Screen](https://github.com/mustafatmaca/tobeto-mealsapp/assets/58891564/ac7e8a66-cca5-46ae-8f51-4ada86c0666d)
 
-A few resources to get you started if this is your first Flutter project:
+### MealDetails Screen
+![MealDetails Screen](https://github.com/mustafatmaca/tobeto-mealsapp/assets/58891564/420f51b2-96c1-489c-b9f3-6a6a3915f7cd)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Favorites Screen
+![Favorites Screen](https://github.com/mustafatmaca/tobeto-mealsapp/assets/58891564/5b46982d-3014-4516-8e4e-be047b8e19ee)
