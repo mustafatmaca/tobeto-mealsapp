@@ -1,7 +1,7 @@
 # Meals App
-This app shows meals and meals recipes. Meals can be add favorites.
+This app shows meals and meals recipes. Meals can be added favorites.
 
-## What have been used at this project?
+## What has been used in this project?
 - Flutter
 - TheMealsDB API
 
